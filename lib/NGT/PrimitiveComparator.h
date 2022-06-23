@@ -128,7 +128,7 @@ namespace NGT {
 	diff0 = static_cast<COMPARE_TYPE>(*a++ - *b++);
 	d += diff0 * diff0;
       }
-      return sqrt(static_cast<double>(d));
+      return static_cast<double>(d);
     }
 
     inline static double compareL2(const uint8_t *a, const uint8_t *b, size_t size) {
@@ -198,7 +198,7 @@ namespace NGT {
       _mm_store_ps(f, sum128);
 
       double s = f[0] + f[1] + f[2] + f[3];
-      return sqrt(s);
+      return s;
     }
 
 #ifdef NGT_HALF_FLOAT
